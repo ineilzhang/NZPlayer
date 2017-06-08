@@ -25,6 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self addObserver];
     
 }
 
@@ -34,9 +35,39 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+#pragma mark - override method
+
 - (BOOL)prefersStatusBarHidden{
     return YES;
 }
+
+#pragma mark - private method
+
+- (void)addObserver{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(changeInterfaceOrientationToLandscapeLeft:)
+                                                 name:kLandscapeLeftNotification
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(changeInterfaceOrientationToProtrait:)
+                                                 name:kPortraitNotification
+                                               object:nil];
+}
+
+#pragma mark - notification handler
+
+- (void)changeInterfaceOrientationToLandscapeLeft:(NSNotification *)aNotification{
+    [UIApplication sharedApplication].statusBarOrientation = UIInterfaceOrientationLandscapeLeft;
+}
+
+- (void)changeInterfaceOrientationToProtrait:(NSNotification *)aNotification{
+    [UIApplication sharedApplication].statusBarOrientation = UIInterfaceOrientationPortrait;
+}
+
 #pragma mark - target action
 
 - (IBAction)playLocalVideo:(id)sender {

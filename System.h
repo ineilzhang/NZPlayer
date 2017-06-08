@@ -35,4 +35,9 @@ static const CGFloat kVideoControlAnimationInterval = 0.3f;
 static const CGFloat kVideoControlBarAutoFadeOutInterval = 4.0f;
 static const CGFloat kVideoControlProgressSliderHeight = 3.0f;
 
+#pragma mark - notification
+
+static const NSString *kLandscapeLeftNotification = @"UIInterfaceOrientationLandscapeLeft";
+static const NSString *kPortraitNotification = @"UIInterfaceOrientationPortrait";
+
 
