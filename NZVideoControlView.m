@@ -44,7 +44,7 @@
     self.play.frame = CGRectMake(CGRectGetMinX(self.bottomBar.bounds), CGRectGetHeight(self.bottomBar.bounds)/2 - CGRectGetHeight(self.play.bounds)/2 + CGRectGetHeight(self.progressSlider.frame) * 0.6, CGRectGetWidth(self.play.bounds), CGRectGetHeight(self.play.bounds));
     self.pause.frame = self.play.frame;
     self.fullScreen.frame = CGRectMake(CGRectGetWidth(self.bottomBar.bounds) - CGRectGetWidth(self.fullScreen.bounds) - 5, self.play.frame.origin.y, CGRectGetWidth(self.fullScreen.bounds), CGRectGetHeight(self.fullScreen.bounds));
-//    self.backScreen.frame =
+    self.backScreen.frame = CGRectMake(CGRectGetMinX(self.topBar.bounds),CGRectGetMinY(self.topBar.bounds), CGRectGetWidth(self.backScreen.bounds), CGRectGetHeight(self.fullScreen.bounds));
     self.indicatorView.center = CGPointMake(CGRectGetWidth(self.bounds) / 2, CGRectGetHeight(self.bounds) / 2);
     self.time.frame          = CGRectMake(CGRectGetMaxX(self.play.frame), self.play.frame.origin.y, CGRectGetWidth(self.bottomBar.bounds), CGRectGetHeight(self.time.bounds));
     self.alertLabel.center        = CGPointMake(CGRectGetWidth(self.bounds) / 2, CGRectGetHeight(self.bounds) / 2);
