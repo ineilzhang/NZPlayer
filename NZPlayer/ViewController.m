@@ -25,6 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self addObserver];
     
 }
 
@@ -37,6 +38,32 @@
 - (BOOL)prefersStatusBarHidden{
     return YES;
 }
+
+- (BOOL)shouldAutorotate{
+    return NO;
+}
+
+#pragma mark - notification about
+
+- (void)addObserver{
+    [kNoficationCenter addObserver:self
+                          selector:@selector(changeInterfaceOrientationToLandscapeLeft:)
+                              name:kInterfaceLandscapeLeftOrientation
+                            object:nil];
+    [kNoficationCenter addObserver:self
+                          selector:@selector(changeInterfaceOrientationToPortrait:)
+                              name:kInterfaceOrientationPortrait
+                            object:nil];
+}
+
+- (void)changeInterfaceOrientationToLandscapeLeft:(NSNotification *)aNotificaiton{
+    [UIApplication sharedApplication].statusBarOrientation = UIInterfaceOrientationLandscapeRight;
+}
+
+- (void)changeInterfaceOrientationToPortrait:(NSNotification *)aNotification{
+    [UIApplication sharedApplication].statusBarOrientation = UIInterfaceOrientationPortrait;
+}
+
 #pragma mark - target action
 
 - (IBAction)playLocalVideo:(id)sender {

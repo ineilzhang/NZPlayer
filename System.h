@@ -21,6 +21,12 @@
 //#define kButtonHeight 20
 //#define kHUDCycleLineWidth 3.0
 
+#pragma mark - notification 
+
+#define kNoficationCenter [NSNotificationCenter defaultCenter]
+#define kInterfaceLandscapeLeftOrientation @"kInterfaceLandscapeLeftOrientation"
+#define kInterfaceOrientationPortrait @"kInterfaceOrientationPortrait"
+
 static const NSInteger kButtonHeight = 20;
 static const CGFloat kHUDCycleLineWidth = 3.0f;
 static const CGFloat kHUDLineWidth = 10.0f;
@@ -34,5 +40,6 @@ static const CGFloat kVideoControlAlertLabelAlpha = 0.75f;
 static const CGFloat kVideoControlAnimationInterval = 0.3f;
 static const CGFloat kVideoControlBarAutoFadeOutInterval = 4.0f;
 static const CGFloat kVideoControlProgressSliderHeight = 3.0f;
+
 
 
