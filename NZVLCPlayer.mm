@@ -233,19 +233,16 @@
 - (void)closeButtonClick{
     [self dismiss];
     [kNoficationCenter postNotificationName:kInterfaceOrientationPortrait object:nil];
-
 }
 
 - (void)fullScreenButtonClick{
     [self forceChangeOrientation:UIInterfaceOrientationLandscapeLeft];
     [kNoficationCenter postNotificationName:kInterfaceLandscapeLeftOrientation object:nil];
-
 }
 
 - (void)backScreenButtonClick{
     [self forceChangeOrientation:UIInterfaceOrientationPortrait];
     [kNoficationCenter postNotificationName:kInterfaceOrientationPortrait object:nil];
-
 }
 
 - (void)progressSliderClick{
